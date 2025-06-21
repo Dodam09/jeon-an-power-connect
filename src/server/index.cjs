@@ -11,7 +11,14 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 console.log("MAIL_USER:", process.env.MAIL_USER);
 
 const app = express();
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "https://jeon-an-power-connect-a2q4-yunkis-projects.vercel.app", // 네 Vercel 프론트 주소
+    methods: ["POST"], // 혹시 GET도 쓰면 추가
+  })
+);
+
 app.use(express.json());
 
 // 📁 업로드 폴더가 없으면 생성

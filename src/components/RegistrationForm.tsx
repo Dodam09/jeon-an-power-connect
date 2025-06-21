@@ -72,7 +72,7 @@ const RegistrationForm = () => {
       data.append("safetyCard", formData.safetyCard as Blob);
 
       const res = await fetch(
-        "https://jeon-an-power-connect.onrender.com/api/register",
+        "https://jeon-an-power-connect-1.onrender.com/api/register",
         {
           method: "POST",
 
