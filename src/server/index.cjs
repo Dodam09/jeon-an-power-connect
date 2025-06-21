@@ -14,8 +14,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://jeon-an-power-connect-a2q4-yunkis-projects.vercel.app", // 네 Vercel 프론트 주소
-    methods: ["POST"], // 혹시 GET도 쓰면 추가
+    origin: "https://jeon-an-power-connect-a2q4.vercel.app",
+    methods: ["POST"],
   })
 );
 
