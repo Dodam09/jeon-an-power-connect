@@ -125,8 +125,9 @@ const RegistrationForm = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             인력 등록하기
           </h2>
-          <p className="text-xl text-gray-600">
-            아래 정보를 입력하시면 적합한 일자리를 연결해드립니다
+          <p className="text-xl text-gray-600 text-center max-w-[300px] mx-auto">
+            아래 정보를 입력하시면 <br />
+            적합한 일자리를 연결해드립니다
           </p>
         </div>
 

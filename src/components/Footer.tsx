@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import React from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,18 +10,19 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold">주안전기공사</h3>
             <p className="text-gray-300">
-              인천 및 수도권 중심의<br />
+              인천 및 수도권 중심의
+              <br />
               전기 기술 전문 인력 매칭 서비스
             </p>
           </div>
-          
+
           {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">연락처</h4>
             <div className="space-y-2">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2 text-blue-400" />
-                <span>010-3084-0910</span>
+                <span>010-4325-0482</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2 text-blue-400" />
@@ -34,7 +34,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Service Areas */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">서비스 지역</h4>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; 2024 주안전기공사. All rights reserved.</p>
         </div>
