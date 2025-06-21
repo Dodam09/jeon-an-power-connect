@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "juanelectric.vercel.app",
+    origin: "https://juanelectric.vercel.app",
     methods: ["POST"],
   })
 );
