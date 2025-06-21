@@ -71,10 +71,14 @@ const RegistrationForm = () => {
       data.append("idCard", formData.idCard as Blob);
       data.append("safetyCard", formData.safetyCard as Blob);
 
-      const res = await fetch("http://localhost:4000/api/register", {
-        method: "POST",
-        body: data,
-      });
+      const res = await fetch(
+        "https://jeon-an-power-connect.onrender.com/api/register",
+        {
+          method: "POST",
+
+          body: data,
+        }
+      );
 
       if (!res.ok) throw new Error("서버 오류");
 
