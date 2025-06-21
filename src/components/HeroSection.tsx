@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8 animate-fade-in">
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          <h1 className="mt-16 text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
             <span className="block">서울/인천/경기</span>
             <span className="block text-blue-600 mt-2">주안전기공사인력</span>
           </h1>
@@ -42,7 +42,7 @@ const HeroSection = () => {
             <Button
               onClick={scrollToForm}
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="border-2 bg-blue-600 border-blue-600 text-white hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               등록하기
@@ -60,7 +60,7 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div className="pt-12 pb-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-blue-600">10+</div>
               <div className="text-gray-600">년간의 전문 경험</div>

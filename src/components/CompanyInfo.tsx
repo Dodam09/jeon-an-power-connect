@@ -11,7 +11,7 @@ const CompanyInfo = () => {
             믿을 수 있는 전기 인력 전문가
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            인천 및 수도권 중심의 전기 기술 전문 인력 매칭 서비스
+            인천 및 수도권 중심의 <br /> 전기 기술 전문 인력 매칭 서비스
           </p>
         </div>
 
