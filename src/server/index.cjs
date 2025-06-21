@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://jeon-an-power-connect-a2q4.vercel.app",
+    origin: "juanelectric.vercel.app",
     methods: ["POST"],
   })
 );
