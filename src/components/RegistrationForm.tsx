@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -20,13 +20,22 @@ interface FormData {
   age: string;
   phone: string;
   position: string;
+
   experience: string;
+  selfIntro: string;
   idCard: File | null;
   safetyCard: File | null;
   agreePrivacy: boolean;
 }
 
 const RegistrationForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    fetch("https://jeon-an-power-connect-1.onrender.com/api/ping").catch(() => {
+      // 서버가 일시적으로 슬립 상태라 에러가 나도 무시
+    });
+  }, []);
   const { toast } = useToast();
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -34,6 +43,7 @@ const RegistrationForm = () => {
     phone: "",
     position: "",
     experience: "",
+    selfIntro: "",
     idCard: null,
     safetyCard: null,
     agreePrivacy: false,
@@ -41,6 +51,7 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (
       !formData.name ||
@@ -67,6 +78,7 @@ const RegistrationForm = () => {
       data.append("phone", formData.phone);
       data.append("position", formData.position);
       data.append("experience", formData.experience);
+      data.append("selfIntro", formData.selfIntro);
       data.append("agreePrivacy", String(formData.agreePrivacy));
       data.append("idCard", formData.idCard as Blob);
       data.append("safetyCard", formData.safetyCard as Blob);
@@ -92,6 +104,7 @@ const RegistrationForm = () => {
         phone: "",
         position: "",
         experience: "",
+        selfIntro: "",
         idCard: null,
         safetyCard: null,
         agreePrivacy: false,
@@ -103,6 +116,8 @@ const RegistrationForm = () => {
         description: "잠시 후 다시 시도해주세요.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -164,7 +179,22 @@ const RegistrationForm = () => {
                   />
                 </div>
               </div>
-
+              <div className="space-y-2">
+                <Label htmlFor="selfIntro">자기소개</Label>
+                <textarea
+                  id="selfIntro"
+                  rows={4}
+                  className="w-full p-3 border rounded-md resize-none"
+                  value={formData.selfIntro}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      selfIntro: e.target.value,
+                    }))
+                  }
+                  placeholder="간단 자기 소개"
+                />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="phone">전화번호 *</Label>
                 <Input
@@ -281,9 +311,10 @@ const RegistrationForm = () => {
 
               <Button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full h-14 text-lg font-semibold bg-blue-600 hover:bg-blue-700"
               >
-                등록하기
+                {isSubmitting ? "등록 중..." : "등록하기"}
               </Button>
             </form>
           </CardContent>

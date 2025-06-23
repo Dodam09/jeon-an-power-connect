@@ -11,6 +11,9 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 console.log("MAIL_USER:", process.env.MAIL_USER);
 
 const app = express();
+app.get("/api/ping", (req, res) => {
+  res.status(200).send("pong");
+});
 
 app.use(
   cors({
@@ -39,7 +42,15 @@ app.post(
   upload.fields([{ name: "idCard" }, { name: "safetyCard" }]),
   async (req, res) => {
     try {
-      const { name, age, phone, position, experience, agreePrivacy } = req.body;
+      const {
+        name,
+        age,
+        phone,
+        position,
+        experience,
+        selfIntro,
+        agreePrivacy,
+      } = req.body;
       const idCardFile = req.files["idCard"]?.[0];
       const safetyCardFile = req.files["safetyCard"]?.[0];
 
@@ -71,7 +82,7 @@ app.post(
         from: `"접수봇" <${process.env.MAIL_USER}>`,
         to: process.env.MAIL_TO,
         subject: `📥 새로운 인력 등록: ${name}`,
-        text: `👤 이름: ${name}\n🎂 나이: ${age}\n📱 전화번호: ${phone}\n🛠 직책: ${position}\n📈 경력: ${experience}`,
+        text: `👤 이름: ${name}\n🎂 나이: ${age}\n📱 전화번호: ${phone}\n🛠 직책: ${position}\n📈 경력: ${experience}\n📝 자기소개:${selfIntro}`,
         attachments: [
           {
             filename: idCardFile.originalname,
