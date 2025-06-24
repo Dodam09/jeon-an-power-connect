@@ -60,7 +60,7 @@ const HeroSection = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="pt-12 pb-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          {/* <div className="pt-12 pb-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-3xl font-bold text-blue-600">10+</div>
               <div className="text-gray-600">년간의 전문 경험</div>
@@ -73,7 +73,7 @@ const HeroSection = () => {
               <div className="text-3xl font-bold text-blue-600">24/7</div>
               <div className="text-gray-600">상시 상담 가능</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
