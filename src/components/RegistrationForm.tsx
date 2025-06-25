@@ -270,11 +270,7 @@ const RegistrationForm = () => {
                   const label = isId
                     ? "신분증 첨부 *"
                     : "산업기초안전교육 이수증 *";
-                  const icon = isId ? (
-                    <Upload className="mx-auto h-8 w-8 mb-2" />
-                  ) : (
-                    <FileText className="mx-auto h-8 w-8 mb-2" />
-                  );
+                  const icon = <FileText className="mx-auto h-8 w-8 mb-2" />;
 
                   return (
                     <div key={field} className="space-y-2">
