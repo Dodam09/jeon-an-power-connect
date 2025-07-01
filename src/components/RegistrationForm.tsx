@@ -56,6 +56,7 @@ const RegistrationForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    console.log("폼 상태", formData);
 
     if (
       !formData.name ||
@@ -247,6 +248,7 @@ const RegistrationForm = () => {
               <div className="space-y-2">
                 <Label>경력 *</Label>
                 <Select
+                  value={formData.experience}
                   onValueChange={(value) =>
                     setFormData((prev) => ({ ...prev, experience: value }))
                   }
