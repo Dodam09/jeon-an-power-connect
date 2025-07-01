@@ -17,7 +17,11 @@ app.get("/api/ping", (req, res) => {
 
 app.use(
   cors({
-    origin: "https://juanelectric.vercel.app",
+    origin: [
+      "https://juanelectric.vercel.app",
+      "https://www.juan0482.com",
+      "https://juan0482.com", // www 없는 버전까지 추가 권장
+    ],
     methods: ["POST"],
   })
 );
