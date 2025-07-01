@@ -192,7 +192,7 @@ const RegistrationForm = () => {
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, age: e.target.value }))
                     }
-                    placeholder="35"
+                    placeholder="예) 35"
                   />
                 </div>
               </div>
@@ -209,7 +209,7 @@ const RegistrationForm = () => {
                       selfIntro: e.target.value,
                     }))
                   }
-                  placeholder="거주 지역과 주요 기술을 간단히 입력해주세요. 예: 인천 주안 / 스틸, 트레이, 신축, 인테리어 등"
+                  placeholder="거주 지역과 주요 기술을 간단히 입력해주세요. 예) 인천 주안 / 스틸, 트레이, 신축, 인테리어 등"
                 />
               </div>
               <div className="space-y-2">
