@@ -72,6 +72,7 @@ const RegistrationForm = () => {
         description: "모든 필수 항목과 첨부파일을 확인해주세요.",
         variant: "destructive",
       });
+      setIsSubmitting(false);
       return;
     }
 
