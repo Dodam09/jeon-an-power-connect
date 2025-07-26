@@ -1,77 +1,70 @@
-# Welcome to your Lovable project
+# 전안전기공사 인력 등록 웹앱
 
-## Project info
+> 전기 기술 전문 인력 매칭을 위한 단일 페이지 등록 웹앱  
+> 개인 프로젝트 / 2025년  
+> 🟢 실제 운영 중: https://juan0482.com
 
-##
+---
 
-##
+## 🔍 프로젝트 개요
 
-**URL**: https://lovable.dev/projects/cbef734a-6edf-4ff6-a05b-99136bf74a93
+'전안전기공사 인력 등록 웹앱'은 전기 기술자와 인력을 필요로 하는 현장을 빠르게 연결하기 위한 단일 페이지 웹 애플리케이션입니다.  
+인천 및 수도권 지역을 중심으로 활동하는 전기 공사업체를 위해 설계되었으며, 등록 폼을 통해 필요한 정보를 수집하고 서버로 전송하여 인력 매칭의 효율성을 높이는 것을 목표로 합니다.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 💼 담당 역할 및 기여도
 
-**Use Lovable**
+- AI 기반 프론트엔드 생성: 프론트엔드는 생성형 AI 툴을 활용하여 초기 구축
+- 서버 개발: 사용자 등록 폼 데이터를 수신하는 Node.js 기반 API 서버 직접 구현
+- 폼 제출 처리: FormData 수신 및 파일 업로드 처리 로직 작성
+- 배포: 프론트엔드는 Vercel, 백엔드는 Render에 배포하고 실제 운영 도메인 `juan0482.com`에 연결
+- 기획 및 UI 설계: Tailwind CSS 기반 반응형 인터페이스 설계
+- 프론트엔드 개발: React + TypeScript + Vite 환경에서 SPA 구현
+- 파일 업로드 구현: 신분증, 안전교육 이수증 첨부 기능
+- 서버 연동: Render에 배포된 API 서버와 FormData 기반 POST 요청 처리
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cbef734a-6edf-4ff6-a05b-99136bf74a93) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ 사용 기술 스택
 
-**Use your preferred IDE**
+| 영역       | 기술                                                                  |
+| ---------- | --------------------------------------------------------------------- |
+| Language   | TypeScript                                                            |
+| Frontend   | React, Vite                                                           |
+| Styling    | Tailwind CSS                                                          |
+| UI Kit     | shadcn/ui, lucide-react                                               |
+| Backend    | Node.js API (폼 데이터 처리)                                          |
+| Deployment | Vercel (프론트), Render (백엔드), 가비아 도메인 연결 (`juan0482.com`) |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ⚙️ 주요 기능
 
-Follow these steps:
+- 사용자 인력 등록 폼
+  - 이름, 나이, 연락처, 전공/조공, 경력, 자기소개 입력
+  - 신분증 및 산업안전교육 이수증 이미지 파일 첨부
+  - 개인정보 수집 동의 체크
+- 등록 시 FormData 전송 → 서버에서 수신 및 처리
+- 등록 완료/에러 시 Toast 알림 표시
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🚧 기술적 문제 해결 경험
 
-# Step 3: Install the necessary dependencies.
-npm i
+- 문제: 이미지 파일 업로드 후 미리보기 기능 구현 시 타입 오류 발생  
+  → `File` 객체 유효성 체크 및 `URL.createObjectURL()` 적용
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- 문제: Render 서버 대기시간으로 첫 요청 지연  
+  → 프론트 로딩 시 ping API를 미리 호출하여 서버 깨우기 처리
 
-**Edit a file directly in GitHub**
+- 문제: 모바일 뷰에서 버튼 및 입력 필드 정렬 깨짐  
+  → Tailwind CSS의 `sm:`, `md:` 브레이크포인트로 반응형 조정
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🎯 결과 및 느낀 점
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/cbef734a-6edf-4ff6-a05b-99136bf74a93) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- 실제 소규모 기업의 니즈를 반영해 실용적인 인력 등록 페이지를 제작
+- 서버-클라이언트 간 연동, FormData 처리, 파일 업로드 등 실무 기능을 직접 구현
+- React SPA 구조 및 배포 전 과정을 경험하며 실서비스 수준 프로젝트로 완성
