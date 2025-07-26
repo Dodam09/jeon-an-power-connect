@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
+  //등록하기 버튼 클릭 시 폼 섹션으로 스크롤
   const scrollToForm = () => {
     const formSection = document.getElementById("registration-form");
     if (formSection) {

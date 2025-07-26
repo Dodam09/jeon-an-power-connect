@@ -34,6 +34,7 @@ const RegistrationForm = () => {
     null
   );
 
+  // 서버 깨우기
   useEffect(() => {
     fetch("https://jeon-an-power-connect-1.onrender.com/api/ping").catch(
       () => {}
@@ -57,7 +58,7 @@ const RegistrationForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     console.log("폼 상태", formData);
-
+    // 필수 항목 체크
     if (
       !formData.name ||
       !formData.age ||
@@ -104,6 +105,7 @@ const RegistrationForm = () => {
         description: "담당자가 확인 후 연락드리겠습니다.",
       });
 
+      //전송 후 폼 초기화
       setFormData({
         name: "",
         age: "",
@@ -134,18 +136,22 @@ const RegistrationForm = () => {
     (field: "idCard" | "safetyCard") =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0] || null;
+      // 기존 객체 유지하면서 field만 업데이트
       setFormData((prev) => ({ ...prev, [field]: file }));
 
+      // 파일 타입이 이미지 타입인지 확인
       if (file && file.type.startsWith("image/")) {
         const previewUrl = URL.createObjectURL(file);
+        // 미리보기 URL 설정
         if (field === "idCard") setIdCardPreview(previewUrl);
+        // 안전 교육 이수증 미리보기 URL 설정
         if (field === "safetyCard") setSafetyCardPreview(previewUrl);
       } else {
         if (field === "idCard") setIdCardPreview(null);
         if (field === "safetyCard") setSafetyCardPreview(null);
       }
     };
-
+  // 경력 옵션 생성 (신입부터 40년차까지)
   const experienceOptions = Array.from({ length: 41 }, (_, i) =>
     i === 0 ? "신입" : `${i}년`
   );
