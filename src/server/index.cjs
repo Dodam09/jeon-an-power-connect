@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 const fs = require("fs");
 dotenv.config({ path: path.resolve(__dirname, ".env") });
-console.log("MAIL_USER:", process.env.MAIL_USER);
+// console.log("MAIL_USER:", process.env.MAIL_USER);
 
 const app = express();
 app.get("/api/ping", (req, res) => {
