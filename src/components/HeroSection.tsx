@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
 
 const HeroSection = () => {
   // ...existing code...
@@ -13,6 +13,9 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-blue-200/40 blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-blue-300/30 blur-3xl"></div>
+
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
