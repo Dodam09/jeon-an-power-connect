@@ -16,13 +16,13 @@
 ## 💼 담당 역할 및 기여도
 
 - AI 기반 프론트엔드 생성: 프론트엔드는 생성형 AI 툴을 활용하여 초기 구축
-- 서버 개발: 사용자 등록 폼 데이터를 수신하는 Node.js 기반 API 서버 직접 구현
+  // ...existing code...
 - 폼 제출 처리: FormData 수신 및 파일 업로드 처리 로직 작성
 - 배포: 프론트엔드는 Vercel, 백엔드는 Render에 배포하고 실제 운영 도메인 `juan0482.com`에 연결
 - 기획 및 UI 설계: Tailwind CSS 기반 반응형 인터페이스 설계
 - 프론트엔드 개발: React + TypeScript + Vite 환경에서 SPA 구현
 - 파일 업로드 구현: 신분증, 안전교육 이수증 첨부 기능
-- 서버 연동: Render에 배포된 API 서버와 FormData 기반 POST 요청 처리
+  // ...existing code...
 
 ---
 
@@ -34,7 +34,7 @@
 | Frontend   | React, Vite                                                           |
 | Styling    | Tailwind CSS                                                          |
 | UI Kit     | shadcn/ui, lucide-react                                               |
-| Backend    | Node.js API (폼 데이터 처리)                                          |
+| Backend    | (제거됨)                                                              |
 | Deployment | Vercel (프론트), Render (백엔드), 가비아 도메인 연결 (`juan0482.com`) |
 
 ---
@@ -51,7 +51,6 @@
 ---
 
 ## 🚧 기술적 문제 해결 경험
-
 
 - 문제: Render 서버 대기시간으로 첫 요청 지연  
   → 프론트 로딩 시 ping API를 미리 호출하여 서버 깨우기 처리

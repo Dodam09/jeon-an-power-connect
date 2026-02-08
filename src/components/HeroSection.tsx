@@ -3,13 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
-  //등록하기 버튼 클릭 시 폼 섹션으로 스크롤
-  const scrollToForm = () => {
-    const formSection = document.getElementById("registration-form");
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // ...existing code...
 
   const handlePhoneCall = () => {
     window.location.href = "tel:010-4325-0482";
@@ -40,15 +34,6 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button
-              onClick={scrollToForm}
-              size="lg"
-              className="border-2 bg-blue-600 border-blue-600 text-white hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <MessageCircle className="mr-2 h-5 w-5" />
-              등록하기
-            </Button>
-
             <Button
               onClick={handlePhoneCall}
               variant="outline"
